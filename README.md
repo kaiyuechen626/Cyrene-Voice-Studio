@@ -4,7 +4,13 @@
 
 无需 Muse、Termux、F-Droid 或额外兼容程序。安装模型后，合成不需要网络；应用没有网络权限，不包含云端 TTS 或 HTTP 服务。推理使用 sherpa-onnx 1.13.8 + ZipVoice-distill INT8，当前面向 Android 8.0 以上 ARM64 手机。
 
-当前为 **0.2.0 源码预览版**，由 [kaiyuechen626](https://github.com/kaiyuechen626) 维护。应用界面、角色管理、音频处理及系统 TTS 接入在本项目中实现；底层推理和语音模型分别来自 sherpa-onnx、ZipVoice 等上游项目，不宣称这些组件为本项目自研。已完成本机构建和自动测试，新版尚未完成真机验收。
+当前为 **0.2.0 预览版**，由 [kaiyuechen626](https://github.com/kaiyuechen626) 维护。应用界面、角色管理、音频处理及系统 TTS 接入在本项目中实现；底层推理和语音模型分别来自 sherpa-onnx、ZipVoice 等上游项目，不宣称这些组件为本项目自研。已完成本机构建和自动测试，新版尚未完成真机验收。
+
+## 下载 APK
+
+[**点击下载可安装的 ARM64 APK**](https://github.com/kaiyuechen626/Cyrene-Voice-Studio/releases/download/v0.2.0-preview.1/Cyrene-Voice-Studio-0.2.0-arm64-v8a.apk) · [预览版说明与全部附件](https://github.com/kaiyuechen626/Cyrene-Voice-Studio/releases/tag/v0.2.0-preview.1)
+
+Android 8.0 以上 ARM64 手机可用。安装包不含模型或预置音色，首次使用需按下文准备基础模型。已有旧版请覆盖安装，遇到签名冲突不要卸载；预览版沿用原开发证书，详情见[安装与升级说明](docs/APK_RELEASE.md)。新版未完成真机验收。
 
 ## 能做什么
 
@@ -18,7 +24,7 @@
 
 ## 使用
 
-1. 自行构建应用，并准备来源经过校验的基础 `.cyvoice` 模型包，见[模型准备](docs/MODELS.md)。仓库不附带模型或个人音色。
+1. 下载 APK 安装或自行构建应用，并准备来源经过校验的基础 `.cyvoice` 模型包，见[模型准备](docs/MODELS.md)。仓库不附带模型或个人音色。
 2. 在应用导入基础包，选择“上传录音，创建音色”，填写角色名称和录音原文。
 3. 输入不同于参考录音的文字，选择角色并朗读；首次合成需要加载模型。
 4. 供其他应用调用时，点击“将当前角色设为系统 TTS 默认音色”，再在系统或调用方选择 Cyrene Voice。调用方的音色选择可能覆盖默认角色。
@@ -55,6 +61,6 @@ Linux/macOS 可用 `bash gradlew`。`ANDROID_HOME` 指向本机 Android SDK，�
 
 应用原创源码采用 **GNU GPL v3.0（GPL-3.0-only）**，完整条款见 [LICENSE](LICENSE)。第三方代码、模型、发音数据和构建工具保留各自的许可与版权，不因本项目的许可证而改变，详见 [NOTICE](NOTICE) 与[第三方说明](THIRD_PARTY_NOTICES.md)。
 
-本仓库只发布源码、Gradle Wrapper 和文档，不分发运行库 AAR、APK、模型、用户录音或个人音色。发布包含这些组件的二进制或模型包时，还需满足相应组件的许可、署名及适用的对应源码提供义务。选择 GPLv3 不等于已完成任何二进制或模型分发审核。
+Git 仓库保存源码、Gradle Wrapper 与文档，不提交运行库 AAR、APK、模型、录音或个人音色。预览 Release 另行提供签名 APK、对应应用源码及上游源码材料；APK 内附许可文本。详见 [APK 对应源码](docs/BINARY_SOURCES.md)。模型与个人音色不随 Release 分发。
 
 官方资料：[sherpa-onnx 1.13.8](https://github.com/k2-fsa/sherpa-onnx/tree/v1.13.8)、[ZipVoice](https://github.com/k2-fsa/ZipVoice)、[ZipVoice 使用文档](https://k2-fsa.github.io/sherpa/onnx/tts/zipvoice.html)。

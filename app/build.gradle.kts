@@ -13,6 +13,7 @@ android {
         ndk { abiFilters += "arm64-v8a" }
     }
     sourceSets["main"].java.srcDir("../shared/src/main/java")
+    sourceSets["main"].assets.srcDir("../third_party")
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
     kotlinOptions { jvmTarget = "17" }
     buildTypes {

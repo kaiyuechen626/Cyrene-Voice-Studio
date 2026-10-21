@@ -23,7 +23,7 @@ def selected_sources():
         for path in (ROOT / directory).rglob("*"):
             if not path.is_file() or "__pycache__" in path.parts:
                 continue
-            if path.suffix in EXTENSIONS or (directory == "third_party" and path.suffix == ""):
+            if path.suffix in EXTENSIONS or directory == "third_party":
                 selected.add(path)
     return sorted(selected)
 
