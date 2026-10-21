@@ -1,0 +1,14 @@
+Cyrene Voice Studio
+Maintained by kaiyuechen626: https://github.com/kaiyuechen626
+
+Original application source is provided under GPL-3.0-only. See LICENSE.
+The project does not claim authorship of the speech model, inference runtime,
+pronunciation data, or Gradle Wrapper.
+
+Speech generation uses sherpa-onnx and ZipVoice. Their upstream licenses,
+and the licenses of ONNX Runtime, eSpeak NG, Vocos and Gradle, remain applicable.
+See THIRD_PARTY_NOTICES.md and third_party/ for license texts and source links.
+
+The application uses reference audio conditioning, not on-device model training.
+Voice recordings, model weights, personal voice packs and runtime AAR binaries
+are not included in this source repository.
